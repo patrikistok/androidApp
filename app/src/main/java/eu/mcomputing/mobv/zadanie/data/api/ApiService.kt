@@ -11,9 +11,11 @@ import eu.mcomputing.mobv.zadanie.data.api.model.LoginResponse
 import eu.mcomputing.mobv.zadanie.data.api.model.RefreshTokenRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.RefreshTokenResponse
 import eu.mcomputing.mobv.zadanie.data.api.model.RegistrationResponse
+import eu.mcomputing.mobv.zadanie.data.api.model.ResetPasswordResponse
 import eu.mcomputing.mobv.zadanie.data.api.model.UserChangePasswordRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserLoginRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserRegistrationRequest
+import eu.mcomputing.mobv.zadanie.data.api.model.UserResetPasswordRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserResponse
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -35,6 +37,9 @@ interface ApiService {
 
     @POST("user/password.php")
     suspend fun changePassword(@Body userInfo: UserChangePasswordRequest): Response<ChangePasswordResponse>
+
+    @POST("user/reset.php")
+    suspend fun resetPassword(@Body userInfo: UserResetPasswordRequest): Response<ResetPasswordResponse>
 
     @GET("user/get.php")
     suspend fun getUser(
