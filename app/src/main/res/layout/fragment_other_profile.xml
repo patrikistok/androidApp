@@ -32,25 +32,28 @@
 
         <TextView
             android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="162dp"
             android:text="@{model.userResult.username}"
             android:textSize="16sp"
+            android:gravity="center"
             app:layout_constraintEnd_toStartOf="@+id/cardView"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.40"/>
 
         <TextView
             android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
             app:layout_constraintBottom_toTopOf="@+id/mapView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.80"
+            />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
