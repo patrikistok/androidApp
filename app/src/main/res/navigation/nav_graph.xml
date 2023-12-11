@@ -1,0 +1,132 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.IntroFragment"
+        android:label="IntroFragment">
+
+        <action
+            android:id="@+id/action_intro_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_intro_to_signup"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_intro_feed"
+            app:popUpToInclusive="true"
+            app:destination="@id/feedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_passwordResetFragment"
+            app:destination="@id/passwordResetFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_login_feed"
+            app:popUpToInclusive="true"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.SignupFragment"
+        android:label="SignupFragment">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signup_feed"
+            app:popUpToInclusive="true"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.FeedFragment"
+        android:label="FeedFragment">
+        <action
+            android:id="@+id/action_feedFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_otherProfileFragment"
+            app:destination="@id/OtherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/ChangePasswordFragment" />
+        <action
+            android:id="@+id/action_profile_intro"
+            app:popUpToInclusive="true"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.MapFragment"
+        android:label="MapFragment">
+        <action
+            android:id="@+id/action_mapFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_otherProfileFragment"
+            app:destination="@id/OtherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordResetFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.PasswordResetFragment"
+        android:label="PasswordResetFragment">
+        <action
+            android:id="@+id/action_passwordResetFragment_to_LoginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/OtherProfileFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.OtherProfileFragment"
+        android:label="OtherProfileFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChangePasswordFragment"
+        android:name="eu.mcomputing.mobv.zadanie.fragments.ChangePasswordFragment"
+        android:label="ChangePasswordFragment">
+        <action
+            android:id="@+id/action_changePasswordFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_to_feed"
+        app:destination="@id/feedFragment" />
+
+    <action
+        android:id="@+id/action_to_map"
+        app:destination="@id/mapFragment" />
+
+    <action
+        android:id="@+id/action_to_profile"
+        app:destination="@id/profileFragment" />
+
+
+</navigation>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MOBV Zadanie</string>
+    <string name="title_login">Prihlásenie</string>
+    <string name="title_intro">Intro</string>
+    <string name="title_signup">Registrácia</string>
+    <string name="title_change_passoword">Zmena hesla</string>
+    <string name="title_password_reset">Obnovenie hesla</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Heslo</string>
+    <string name="repeat_password">Zopakujte heslo</string>
+    <string name="new_password">Nové heslo</string>
+    <string name="again_new_password">Znova nové heslo</string>
+    <string name="register">Registrovať</string>
+    <string name="login">Prihlásiť</string>
+    <string name="change_password">Zmeniť heslo</string>
+    <string name="password_reset">Resetovať heslo</string>
+    <string name="lost_password">Zabudnuté heslo</string>
+    <string name="profile">Profile</string>
+    <string name="load_profile">Načítaj profil</string>
+    <string name="logout">Odhlásiť sa</string>
+    <string name="share_location">Zdielať polohu</string>
+    <string name="sharing_start">Začiatok zaznamenávania</string>
+    <string name="sharing_end">Koniec zaznamenávania</string>
+    <string name="confirm_sharing">Potvrdiť zaznamenávanie</string>
+    <string name="center_map_description">Vycentrovať mapu</string>
+    <string name="profile_image_description">Profilová fotka</string>
+    <string name="location_switch_description">Zapnutie zdieľania polohy</string>
+    <string name="navigation_map">Navigácia na mapu</string>
+    <string name="navigation_feed">Navigácia na zoznam</string>
+    <string name="navigation_profile">Navigácia na profil</string>
+</resources>
