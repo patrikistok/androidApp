@@ -5,6 +5,7 @@
     <string name="title_signup">Registrácia</string>
     <string name="title_change_passoword">Zmena hesla</string>
     <string name="title_password_reset">Obnovenie hesla</string>
+    <string name="title_feed">Používatelia vo vašom okolí</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="password">Heslo</string>
@@ -16,7 +17,7 @@
     <string name="change_password">Zmeniť heslo</string>
     <string name="password_reset">Resetovať heslo</string>
     <string name="lost_password">Zabudnuté heslo</string>
-    <string name="profile">Profile</string>
+    <string name="profile">Profil</string>
     <string name="logout">Odhlásiť sa</string>
     <string name="share_location">Zdielať polohu</string>
     <string name="center_map_description">Vycentrovať mapu</string>
@@ -25,4 +26,5 @@
     <string name="navigation_map">Navigácia na mapu</string>
     <string name="navigation_feed">Navigácia na zoznam</string>
     <string name="navigation_profile">Navigácia na profil</string>
+    <string name="last_updated">Posledná aktualizácia</string>
 </resources>

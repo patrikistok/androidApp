@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -28,6 +29,7 @@ import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import eu.mcomputing.mobv.zadanie.databinding.FragmentProfileBinding
 import eu.mcomputing.mobv.zadanie.R
 import eu.mcomputing.mobv.zadanie.broadcastReceivers.GeofenceBroadcastReceiver
@@ -122,6 +124,13 @@ class ProfileFragment : Fragment() {
             user?.let {
                 viewModel.loadUser(it.id)
             }
+            Log.d("user", user.toString())
+            Picasso.get()
+                .load("https://upload.mcomputing.eu/" + user?.photo)
+                .resize(140, 140)
+                .centerCrop()
+                .placeholder(R.drawable.baseline_person_2_24)
+                .into(view.findViewById<ImageView>(R.id.userPhoto))
 
             bnd.logoutBtn.setOnClickListener {
                 PreferenceData.getInstance().clearData(requireContext())
@@ -256,5 +265,6 @@ class ProfileFragment : Fragment() {
     private fun cancelWorker() {
         WorkManager.getInstance(requireContext()).cancelUniqueWork("myworker")
     }
+
 
 }

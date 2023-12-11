@@ -8,12 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import eu.mcomputing.mobv.zadanie.R
 import eu.mcomputing.mobv.zadanie.adapters.FeedAdapter
 import eu.mcomputing.mobv.zadanie.data.DataRepository
+import eu.mcomputing.mobv.zadanie.data.db.entities.UserEntity
 import eu.mcomputing.mobv.zadanie.viewmodels.FeedViewModel
 import eu.mcomputing.mobv.zadanie.widgets.BottomBar
 import eu.mcomputing.mobv.zadanie.databinding.FragmentFeedBinding
+import eu.mcomputing.mobv.zadanie.interfaces.ItemInterface
 
 class FeedFragment : Fragment() {
     private lateinit var viewModel: FeedViewModel
@@ -47,7 +51,15 @@ class FeedFragment : Fragment() {
             bnd.bottomBar.setActive(BottomBar.FEED)
 
             bnd.feedRecyclerview.layoutManager = LinearLayoutManager(context)
-            val feedAdapter = FeedAdapter()
+            val feedAdapter = FeedAdapter(object : ItemInterface{
+                override fun onItemClick(userEntity: UserEntity) {
+                    val userProfileBundle = Bundle().apply {
+                        putString("userId", userEntity.uid)
+                        putString("lastUpdate", userEntity.updated)
+                    }
+                    view.findNavController().navigate(R.id.action_feedFragment_to_otherProfileFragment, userProfileBundle)
+                }
+            })
             bnd.feedRecyclerview.adapter = feedAdapter
 
             // Pozorovanie zmeny hodnoty

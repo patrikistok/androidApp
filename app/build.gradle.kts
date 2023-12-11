@@ -56,6 +56,7 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("androidx.test:monitor:1.6.1")
     implementation("androidx.test.ext:junit-ktx:1.1.5")
+    implementation("com.squareup.picasso:picasso:2.8")
     androidTestImplementation("junit:junit:4.12")
 
     val room_version = "2.6.0"
