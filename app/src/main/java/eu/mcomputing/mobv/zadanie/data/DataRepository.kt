@@ -7,6 +7,7 @@ import eu.mcomputing.mobv.zadanie.data.api.model.GeofenceUpdateRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserChangePasswordRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserLoginRequest
 import eu.mcomputing.mobv.zadanie.data.api.model.UserRegistrationRequest
+import eu.mcomputing.mobv.zadanie.data.api.model.UserResetPasswordRequest
 import eu.mcomputing.mobv.zadanie.data.db.AppRoomDatabase
 import eu.mcomputing.mobv.zadanie.data.db.entities.GeofenceEntity
 import eu.mcomputing.mobv.zadanie.data.db.entities.UserEntity
@@ -150,6 +151,31 @@ class DataRepository private constructor(
             ex.printStackTrace()
         }
         return Pair("Fatal error. Failed to change password", false)
+    }
+
+    suspend fun apiResetPassword(
+        email: String,
+    ): Pair<String, Boolean> {
+        if (email.isEmpty()) {
+            return Pair("Reset email can not be empty", false)
+        }
+        try {
+            val response = service.resetPassword(UserResetPasswordRequest(email))
+            Log.d("repository", response.toString())
+            Log.d("repository", email)
+            if (response.isSuccessful) {
+                response.body()?.let { json_response ->
+                    return Pair("Email with password reset sent successfully", true)
+                }
+            }
+            return Pair("Failed to reset password", false)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return Pair("Check internet connection. Failed to reset password.", false)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
+        return Pair("Fatal error. Failed to reset password", false)
     }
 
     suspend fun apiGetUser(
