@@ -1,1 +1,1 @@
-Android mobile app in Cotlin
+Android mobile app in Kotlin
